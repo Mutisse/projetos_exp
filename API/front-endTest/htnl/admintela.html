@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Tela de Pesquisa</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+
+    .navbar {
+      background-color: #333;
+      overflow: hidden;
+    }
+
+    .navbar a {
+      float: left;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
+
+    .navbar a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    .container {
+      display: flex;
+      height: calc(100vh - 60px); /* 60px para a altura da barra de navegação */
+    }
+
+    aside {
+      background-color: #f1f1f1;
+      padding: 20px;
+      width: 200px;
+    }
+
+    main {
+      flex: 1;
+      padding: 20px;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    th, td {
+      padding: 8px;
+      border: 1px solid #ddd;
+    }
+
+    input[type="text"] {
+      padding: 8px;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+
+    button {
+      padding: 8px 16px;
+      margin-right: 5px;
+    }
+  </style>
+</head>
+<body>
+  <div class="navbar">
+    <a href="#">Página 1</a>
+    <a href="#">Página 2</a>
+    <a href="#">Página 3</a>
+    <a class="logout" href="#"><i class="fas fa-sign-out-alt"></i> Sair</a>
+  </div>
+
+  <div class="container">
+    <aside>
+      <h3>Menu</h3>
+      <!-- Conteúdo do menu -->
+    </aside>
+
+    <main>
+      <h1>Tela de Pesquisa</h1>
+      
+      <input type="text" id="searchInput" placeholder="Digite o termo de pesquisa...">
+      <button onclick="search()">Pesquisar</button>
+
+      <table id="dataTable">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Apelido</th>
+            <!-- Outros atributos -->
+          </tr>
+        </thead>
+        <tbody id="tableBody">
+          <!-- Os dados da tabela serão preenchidos dinamicamente com JavaScript -->
+        </tbody>
+      </table>
+
+      <form id="editForm">
+        <h2>Editar Usuário</h2>
+        <label for="editId">ID:</label>
+        <input type="text" id="editId" readonly>
+        <label for="editNome">Nome:</label>
+        <input type="text" id="editNome">
+        <label for="editApelido">Apelido:</label>
+        <input type="text" id="editApelido">
+        <!-- Outros atributos -->
+        <br><br>
+        <button type="button" onclick="edit()">Editar</button>
+        <button type="button" onclick="delete()">Excluir</button>
+        <button type="button" onclick="block()">Bloquear</button>
+      </form>
+    </main>
+  </div>
+
+  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <script>
+    // Função de pesquisa
+    function search() {
+      // Obter o termo de pesquisa digitado pelo usuário
+      var searchTerm = document.getElementById("searchInput").value;
+
+      // Fazer a lógica de pesquisa aqui
+      // ...
+
+      // Preencher a tabela com os resultados da pesquisa
+      var tableBody = document.getElementById("tableBody");
+      tableBody.innerHTML = `
+        <tr>
+          <td>ID1</td>
+          <td>Nome1</td>
+          <td>Apelido1</td>
+          <!-- Outros atributos -->
+        </tr>
+        <tr>
+          <td>ID2</td>
+          <td>Nome2</td>
+          <td>Apelido2</td>
+          <!-- Outros atributos -->
+        </tr>
+        <!-- Adicione mais linhas de acordo com os resultados da pesquisa -->
+      `;
+    }
+
+    // Função de edição
+    function edit() {
+      // Obter os valores dos campos de edição
+      var id = document.getElementById("editId").value;
+      var nome = document.getElementById("editNome").value;
+      var apelido = document.getElementById("editApelido").value;
+      // Obter outros atributos
+
+      // Fazer a lógica de edição aqui
+      // ...
+
+      // Limpar os campos de edição após a edição ser concluída
+      document.getElementById("editId").value = "";
+      document.getElementById("editNome").value = "";
+      document.getElementById("editApelido").value = "";
+      // Limpar outros campos
+
+      // Atualizar a tabela com os dados editados
+      search();
+    }
+
+    // Função de exclusão
+    function delete() {
+      // Obter o ID do usuário a ser excluído
+      var id = document.getElementById("editId").value;
+
+      // Fazer a lógica de exclusão aqui
+      // ...
+
+      // Limpar os campos de edição após a exclusão ser concluída
+      document.getElementById("editId").value = "";
+      document.getElementById("editNome").value = "";
+      document.getElementById("editApelido").value = "";
+      // Limpar outros campos
+
+      // Atualizar a tabela com os dados atualizados (usuário excluído)
+      search();
+    }
+
+    // Função de bloqueio
+    function block() {
+      // Obter o ID do usuário a ser bloqueado
+      var id = document.getElementById("editId").value;
+
+      // Fazer a lógica de bloqueio aqui
+      // ...
+
+      // Limpar os campos de edição após o bloqueio ser concluído
+      document.getElementById("editId").value = "";
+      document.getElementById("editNome").value = "";
+      document.getElementById("editApelido").value = "";
+      // Limpar outros campos
+
+      // Atualizar a tabela com os dados atualizados (usuário bloqueado)
+      search();
+    }
+
+    // Função de logout
+    var logoutLink = document.querySelector(".logout");
+    logoutLink.addEventListener("click", function() {
+      // Implemente a lógica de logout aqui
+      console.log("Logout realizado");
+    });
+  </script>
+</body>
+</html>

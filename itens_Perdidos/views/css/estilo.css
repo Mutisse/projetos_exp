@@ -1,0 +1,46 @@
+
+/* essa parte e para detalhes da pagina*/
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/*  essa parte estou aa dar altura e a margem  para os componetes*/
+
+form {
+    margin: 50px auto;
+    width: 300px;
+}
+
+/* aggora vou estilizar as componetes abaixo para que uma eteja por cima da outra */
+label, input, textarea {
+    display: block; /* essa componete poemas coisas em blocos */
+    margin-bottom: 10px;
+}
+
+/* fonte para os titulos*/
+label {font-weight: bold;}
+
+/* tamanho para as componetes de nome e descricao */
+input, textarea {
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    width: 100%;
+}
+
+/* botoes */
+button {
+    padding: 10px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+
+

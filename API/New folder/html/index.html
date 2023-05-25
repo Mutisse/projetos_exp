@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Página Inicial</title>
+    <link rel="stylesheet" type="text/css" href="/css/styles.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#">Início</a></li>
+                <li><a href="#">Notificações</a></li>
+                <li><a href="#">Perfil</a></li>
+            </ul>
+        </nav>
+    </header>
+    <div class="container">
+        <aside>
+            <div class="profile">
+                <label for="profile-picture-input">
+                    <input type="file" id="profile-picture-input" accept="image/*" style="display: none">
+                    <img id="profile-picture" src="profile-picture.jpg" alt="Imagem de Perfil">
+                </label>
+                <h2 id="user-name">Nome do Usuário</h2>
+                <p id="profile-description">Descrição do perfil</p>
+
+            </div>
+        </aside>
+
+      
+
+
+        <div class="main-content">
+            <main>
+
+                <div id="posts-container" class="container"></div>
+                
+            </main>
+        </div>
+    </div>
+
+    <script src="/javascript/script.js"></script>
+    <script src="/javascript/scriptFoto.js"></script>
+
+</body>
+
+</html>
